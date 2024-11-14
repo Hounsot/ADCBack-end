@@ -76,7 +76,9 @@ Rails.application.configure do
 
   # Only use :id for inspections in production.
   config.active_record.attributes_for_inspect = [ :id ]
-
+  # Allow requests from your domain
+  config.hosts << "zaum.xyz"
+  config.hosts << "www.zaum.xyz" # Include if you also use www.zaum.xyz
   # Enable DNS rebinding protection and other `Host` header attacks.
   config.hosts = [
     "example.com",     # Allow requests from example.com
