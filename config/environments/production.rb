@@ -71,6 +71,12 @@ Rails.application.configure do
   # the I18n.default_locale when a translation cannot be found).
   config.i18n.fallbacks = true
 
+  Rails.application.config.middleware.insert_before 0, Rack::Cors do
+    allow do
+      origins 'https://hounsot.github.io'
+      resource '*', headers: :any, methods: [:get, :post, :options, :head]
+    end
+  end
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 
