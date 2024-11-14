@@ -2,15 +2,6 @@ require "active_support/core_ext/integer/time"
 
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
-  Rails.application.config.middleware.insert_before 0, Rack::Cors do
-    allow do
-      origins 'https://hounsot.github.io' # Allow only your GitHub Pages domain
-      resource '*',
-        headers: :any,
-        methods: [:get, :post, :options],
-        credentials: false
-    end
-  end
     # Code is not reloaded between requests.
   config.enable_reloading = false
 
