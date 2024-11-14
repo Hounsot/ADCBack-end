@@ -87,7 +87,7 @@ production:
     <<: *default
     database: adc_telegram_app_production
     username: zaum
-    password: <%= ENV["TestPassword9988"] %>
+    password: TestPassword9988
   cache:
     <<: *primary_production
     database: adc_telegram_app_production_cache
