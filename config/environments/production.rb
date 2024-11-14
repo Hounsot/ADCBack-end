@@ -76,11 +76,12 @@ Rails.application.configure do
 
   # Only use :id for inspections in production.
   config.active_record.attributes_for_inspect = [ :id ]
+  config.hosts << "zaum.xyz"
   # Enable DNS rebinding protection and other `Host` header attacks.
-  config.hosts = [
-    "zaum.xyz",             # Allow requests from zaum.xyz
-    "www.zaum.xyz",         # Allow requests from www.zaum.xyz
-  ]  #
+  # config.hosts = [
+  #   "zaum.xyz",             # Allow requests from zaum.xyz
+  #   "www.zaum.xyz",         # Allow requests from www.zaum.xyz
+  # ]  #
   # Skip DNS rebinding protection for the default health check endpoint.
   # config.host_authorization = { exclude: ->(request) { request.path == "/up" } }
 end
