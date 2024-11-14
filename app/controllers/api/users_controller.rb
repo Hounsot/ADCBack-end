@@ -14,7 +14,16 @@ module Api
     private
 
     def user_params
-      params.require(:user).permit(:name, :surname, :portfolio_link, :company)
-    end
+      params.require(:user).permit(
+        :name,
+        :surname,
+        :portfolio_link,
+        :company,
+        :telegram_id,
+        :telegram_username,
+        :chat_id,
+        :chat_type
+      )
+      end
   end
 end
